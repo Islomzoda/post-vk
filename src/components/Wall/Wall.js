@@ -6,14 +6,7 @@ import { COMMENT_ADD, COMMENT_LIKE, COMMENT_REMOVE, POST_LIKE, POST_ADD } from '
 let nextPostId = 1;
 let nextCommentId = 1;
 
-/*
-{
-    id: ...,
-    author: {
-        name: ...
-    }
-}
-*/
+
 
 const initialPosts = [
     {   id: nextPostId++,
@@ -70,11 +63,12 @@ function addComment(comments, comment, authorName, photo, authorAvatar) {
 };
 
 function reducer(posts, action) {
-    // switch
+    
     switch (action.type) {
         case POST_LIKE:
             {
-                const { postId } = action;
+                // const { postId } = action;
+                const postId = action.postId;
                 return posts.map(p => {
                     if (p.id !== postId) {
                         return p;
@@ -125,7 +119,7 @@ function reducer(posts, action) {
     }
 }
 
-// dispatcher - диспетчер
+
 export default function Wall() {
     const [posts, dispatch] = useReducer(reducer, initialPosts);
 
