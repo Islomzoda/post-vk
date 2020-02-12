@@ -37,6 +37,7 @@ const initialPosts = [
         id: nextPostId++,
         authorAvatar: 'https://sun9-69.userapi.com/c852020/v852020365/12d718/ttreDHtKM80.jpg?ava=1', 
         authorName: 'Vasya',
+        photo:'https://i.pravatar.cc/700',
         likes: 4,
         textContent: 'First Post',
         comments: [
